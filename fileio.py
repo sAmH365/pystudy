@@ -29,3 +29,9 @@ print(str)
 file = open('result.txt', 'w')
 file.write(str)
 file.close()
+
+file = open('a.text', 'w')
+
+for i in range(4):
+    file.write(list[i] + '\n')
+file.close()
