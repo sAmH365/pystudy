@@ -18,3 +18,8 @@ print(중고차2['brand'])
 
 중고차2['brand'] = 'abc123'
 print(중고차2['brand'])
+
+dic = {
+    'dic1' : 'foo',
+    'dic2' : 'bar'
+}

@@ -1,5 +1,5 @@
 # 파일 만들기
-file = open('a.text', 'w') # writea모드로 오픈, 있으면 덮어쓰기,
+file = open('a.text', 'w') # write모드로 오픈, 있으면 덮어쓰기,
 # 'wb': binary모드로 오픈 => 이미지 파일같은경우
 
 file.write('hello123\n') # 파일 내용 작성
