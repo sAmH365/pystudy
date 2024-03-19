@@ -9,6 +9,10 @@ for i in list:
 
 print('=============')
 
+list = ['a', 'b', 'c', 1, 2]
+for idx, value in enumerate(list):
+    print('idx = ' + str(idx), 'value = ' + str(value))
+
 # for i in range(0, 3):
 #     print(i)
 
