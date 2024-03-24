@@ -2,6 +2,13 @@ import requests
 import json
 import time
 
+# map 함수 사용법
+# numList = [2, 3, 4, 5, 6]
+# def add(x):
+#     return x + 1
+# result = map(add, numList)
+# print(list(result))
+
 urlList = [
     'https://tb.coinone.co.kr/api/v1/chart/olhc/?site=coinoneeth&type=1h&last_time=1609524000000',
     'https://tb.coinone.co.kr/api/v1/chart/olhc/?site=coinoneeth&type=1h&last_time=1608811200000',
@@ -22,13 +29,19 @@ def getCurrentVal(url):
     return dictionary['data'][0]['Close']
 
 
-getCurrentVal(urlList[0])
+# getCurrentVal(urlList[0])
+# getCurrentVal(urlList[1])
+# getCurrentVal(urlList[2])
+# getCurrentVal(urlList[3])
+# getCurrentVal(urlList[4])
 
 # 멀티프로세싱 라이브러리
 # .dummy를 붙이면 멀티쓰레딩 가능
 from multiprocessing.dummy import Pool as ThreadPool
 
 pool = ThreadPool(4)
-pool.map()
+result = pool.map(getCurrentVal, urlList)
+print(result)
+
 pool.close()
 pool.join()
