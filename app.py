@@ -1,6 +1,3 @@
-import urllib3
-print(urllib3.__version__)
-
 print('hello')
 
 someWord = '이런 문자가 있을 경우'
