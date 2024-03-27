@@ -5,6 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+import urllib.request
 
 import pyautogui
 import pyperclip
@@ -45,6 +46,25 @@ time.sleep(2)
 
 loginBtn = driver.find_element(By.CSS_SELECTOR, '.btn_login')
 loginBtn.click()
+
+time.sleep(1)
+
+# 사과 검색
+driver.get('https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%82%AC%EA%B3%BC')
+naverImgBtn =driver.find_elements(By.CSS_SELECTOR, 'a[role=tab]')[1]
+naverImgBtn.click()
+time.sleep(1)
+
+btn = driver.find_element(By.CSS_SELECTOR, 'div[role=button]')
+btn.click()
+print('버튼 클릭 성공1')
+
+# 이미지 저장부터 수정해야함
+imgUrl = driver.find_element(By.CSS_SELECTOR, '._fe_image_viewer_image_fallback_target').get_attribute('src')
+print('imgurl ' + imgUrl)
+urllib.request.urlretrieve(imgUrl, '1.jpg')
+print('이미지 저장 완료')
+
 
 
 
