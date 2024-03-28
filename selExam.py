@@ -39,7 +39,7 @@ ActionChains(driver).key_down(Keys.COMMAND).send_keys('v').key_up(Keys.COMMAND).
 time.sleep(2)
 
 inputPw = driver.find_element(By.CSS_SELECTOR, 'input[name=pw]')
-pyperclip.copy('@')
+pyperclip.copy('3250med2@')
 inputPw.click()
 ActionChains(driver).key_down(Keys.COMMAND).send_keys('v').key_up(Keys.COMMAND).perform()
 time.sleep(2)
@@ -59,10 +59,10 @@ btn = driver.find_element(By.CSS_SELECTOR, 'div[role=button]')
 btn.click()
 print('버튼 클릭 성공1')
 
-# 이미지 저장부터 수정해야함
-imgUrl = driver.find_element(By.CSS_SELECTOR, '._fe_image_viewer_image_fallback_target').get_attribute('src')
+# 이미지 저장
+imgUrl = driver.find_element(By.CSS_SELECTOR, 'img[class=_fe_image_viewer_image_fallback_target]').get_attribute('src')
 print('imgurl ' + imgUrl)
-urllib.request.urlretrieve(imgUrl, '1.jpg')
+urllib.request.urlretrieve(imgUrl, 'img/test.jpg')
 print('이미지 저장 완료')
 
 
