@@ -57,6 +57,10 @@ btn = driver.find_element(By.CSS_SELECTOR, 'div[role=button]')
 btn.click()
 print('버튼 클릭 성공1')
 
+# btn.click()이 제대로 안될때
+# btn = driver.find_element(By.CSS_SELECTOR, 'div[role=button]') 버튼 요소 저장후
+# driver.execute_script('arguments[0].click();', e) 자바스크립트 강제 실행
+
 # 이미지 저장
 imgUrl = driver.find_element(By.CSS_SELECTOR, 'img[class=_fe_image_viewer_image_fallback_target]').get_attribute('src')
 print('imgurl ' + imgUrl)
